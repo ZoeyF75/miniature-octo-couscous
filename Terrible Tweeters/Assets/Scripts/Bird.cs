@@ -48,7 +48,11 @@ public class Bird : MonoBehaviour
     {   
         //3D postional vector
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+
+        Vector2 desiredPosition = mousePosition;
+        if (desiredPosition.x > _startPosition.x)
+            desiredPosition.x = _startPosition.x;
+        _rigidbody2D.position = desiredPosition;
     }
 
     // Update is called once per frame
