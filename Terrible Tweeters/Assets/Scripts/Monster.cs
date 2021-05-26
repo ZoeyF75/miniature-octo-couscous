@@ -18,9 +18,13 @@ public class Monster : MonoBehaviour
         if (bird != null) 
             return true;
 
+        //noraml y -0.5 colliding object is coming from above
+        if (collision.contacts[0].normal.y < -0.5)
+            return true;
+
         return false;
     }   
-    
+
     void Die()
     {
         gameObject.SetActive(false);
