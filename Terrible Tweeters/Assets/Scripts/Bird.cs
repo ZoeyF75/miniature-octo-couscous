@@ -56,4 +56,14 @@ public class Bird : MonoBehaviour
     {
         
     }
+
+    //collision is special paramter passed in about objects collided
+    void OnCollisionEnter2D(Collision2D collision) 
+    {   
+        //resets birds postion
+        _rigidbody2D.position = _startPosition;
+        _rigidbody2D.isKinematic = true;
+        _rigidbody2D.velocity = Vector2.zero;
+
+    }
 }
