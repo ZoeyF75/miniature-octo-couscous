@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Bird bird = collision.gameObject.GetComponent<Bird>();
+        if (bird != null) 
+            gameObject.SetActive(false);
     }
 }
