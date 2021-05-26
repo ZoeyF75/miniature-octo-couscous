@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {   
+    [SerializeField] float _launchForce = 500;
+
     Vector2 _startPosition;
     Rigidbody2D _rigidbody2D;
     SpriteRenderer _spriteRenderer;
 
-    voide Awake() 
+    void Awake() 
     {
         //chaching the variables
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -39,7 +41,7 @@ public class Bird : MonoBehaviour
 
         _rigidbody2D.isKinematic = false;
         //add force in direction times 5
-        _rigidbody2D.AddForce(direction * 500);
+        _rigidbody2D.AddForce(direction * _launchForce);
     }
 
     void OnMouseDrag() 
