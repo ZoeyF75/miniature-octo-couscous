@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {   
     [SerializeField] float _launchForce = 500;
-    [SerializeField] float _maxDragDistance = 3.5;
+    [SerializeField] float _maxDragDistance = 5;
 
     Vector2 _startPosition;
     Rigidbody2D _rigidbody2D;
